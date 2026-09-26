@@ -15,12 +15,16 @@ dotenv.config();
 
 const PORT = Number(process.env.PORT) || 5001;
 const __dirname = path.resolve();
+const clientOrigins = (process.env.CLIENT_URLS || "http://localhost:5173")
+  .split(",")
+  .map((origin) => origin.trim())
+  .filter(Boolean);
 
 app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: clientOrigins,
     credentials: true,
   })
 );
