@@ -15,7 +15,7 @@ dotenv.config();
 
 const PORT = Number(process.env.PORT) || 5001;
 const __dirname = path.resolve();
-const clientOrigins = (process.env.CLIENT_URLS || "http://localhost:5173")
+const clientOrigins = (process.env.CLIENT_URLS || "http://localhost:5173,https://vit-connect-web.vercel.app")
   .split(",")
   .map((origin) => origin.trim())
   .filter(Boolean);

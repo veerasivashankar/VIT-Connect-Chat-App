@@ -3,7 +3,7 @@ import http from "http";
 import express from "express";
 import "dotenv/config";
 
-const clientOrigins = (process.env.CLIENT_URLS || "http://localhost:5173")
+const clientOrigins = (process.env.CLIENT_URLS || "http://localhost:5173,https://vit-connect-web.vercel.app")
   .split(",")
   .map((origin) => origin.trim())
   .filter(Boolean);
